@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC/HSC Study Routine - Ramadan 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#2C5F2D">
+    <meta name="color-scheme" content="light dark">
+</head>
+<body>
+    <header>
+        <h1>রমজান-ফেভলি ডেইলি স্টাডি প্ল্যান</h1>
+        <p class="subtitle">অনুশীলন ও ভাল নামাজ সবার আগে ঠিক রাখবো</p>
+    </header>
+
+    <main>
+        <!-- Prayer Times Section -->
+        <section id="prayer-times" class="section">
+            <h2>আজকের নামাজের সময়সূচি</h2>
+            <div class="prayer-times-container">
+                <div class="prayer-card fajr">
+                    <h3>ফজর</h3>
+                    <p class="time" id="fajr-time">4:30 AM</p>
+                    <p class="note">সেহরি শেষ: 4:20 AM</p>
+                </div>
+                <div class="prayer-card dhuhr">
+                    <h3>যোহর</h3>
+                    <p class="time" id="dhuhr-time">1:15 PM</p>
+                </div>
+                <div class="prayer-card asr">
+                    <h3>আসর</h3>
+                    <p class="time" id="asr-time">4:45 PM</p>
+                </div>
+                <div class="prayer-card maghrib">
+                    <h3>মাগরিব</h3>
+                    <p class="time" id="maghrib-time">6:15 PM</p>
+                    <p class="note">ইফতার: 6:15 PM</p>
+                </div>
+                <div class="prayer-card isha">
+                    <h3>ইশা</h3>
+                    <p class="time" id="isha-time">7:30 PM</p>
+                    <p class="note">তারাবি: 8:30 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- After the prayer-times section and before the daily-schedule section -->
+        <section id="routine-customization" class="section">
+            <h2>নিজের রুটিন তৈরি করুন</h2>
+            <button class="create-routine-btn">নতুন রুটিন তৈরি করুন</button>
+        </section>
+
+        <!-- Daily Schedule Section -->
+        <section id="daily-schedule" class="section">
+            <h2>দৈনিক রুটিন</h2>
+            <div class="schedule-controls">
+                <button id="editSchedule" class="edit-btn">রুটিন এডিট করুন</button>
+                <button id="saveSchedule" class="save-btn" style="display: none;">সেভ করুন</button>
+                <button id="resetSchedule" class="reset-btn" style="display: none;">রিসেট করুন</button>
+            </div>
+            <div class="schedule-table">
+                <table id="routineTable">
+                    <thead>
+                        <tr>
+                            <th>সময়</th>
+                            <th>করণীয়</th>
+                            <th>নোট</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>4:00 - 4:20 AM</td>
+                            <td>সেহরি</td>
+                            <td>পুষ্টিকর খাবার + পানি</td>
+                        </tr>
+                        <tr>
+                            <td>4:30 - 5:00 AM</td>
+                            <td>ফজরের নামাজ</td>
+                            <td>সুন্নত + ফরজ + নফল</td>
+                        </tr>
+                        <tr>
+                            <td>5:00 - 6:30 AM</td>
+                            <td>Hardest Subjects (Math/Physics/Chemistry)</td>
+                            <td>মনোযোগ সর্বোচ্চ থাকে</td>
+                        </tr>
+                        <tr>
+                            <td>6:30 - 8:00 AM</td>
+                            <td>বিশ্রাম/ঘুম</td>
+                            <td>১.৫ ঘণ্টা</td>
+                        </tr>
+                        <tr>
+                            <td>8:00 - 11:00 AM</td>
+                            <td>Conceptual Study + Writing Practice</td>
+                            <td>মাঝে ১০ মিনিট বিরতি</td>
+                        </tr>
+                        <tr>
+                            <td>11:00 - 1:00 PM</td>
+                            <td>বিশ্রাম/ঘুম</td>
+                            <td>২ ঘণ্টা</td>
+                        </tr>
+                        <tr>
+                            <td>1:15 - 1:45 PM</td>
+                            <td>যোহরের নামাজ</td>
+                            <td>সুন্নত + ফরজ</td>
+                        </tr>
+                        <tr>
+                            <td>2:00 - 4:00 PM</td>
+                            <td>MCQ & Short Notes Revision</td>
+                            <td>মাঝে আসরের প্রস্তুতি</td>
+                        </tr>
+                        <tr>
+                            <td>4:45 - 5:15 PM</td>
+                            <td>আসরের নামাজ</td>
+                            <td>সুন্নত + ফরজ</td>
+                        </tr>
+                        <tr>
+                            <td>5:15 - 6:00 PM</td>
+                            <td>Light Study (Bangla, English, ICT)</td>
+                            <td>ইফতারের প্রস্তুতি</td>
+                        </tr>
+                        <tr>
+                            <td>6:15 - 7:00 PM</td>
+                            <td>ইফতার + মাগরিবের নামাজ</td>
+                            <td>সুন্নত + ফরজ</td>
+                        </tr>
+                        <tr>
+                            <td>7:00 - 8:30 PM</td>
+                            <td>বিশ্রাম/পরিবারের সাথে সময়</td>
+                            <td>হালকা নাস্তা</td>
+                        </tr>
+                        <tr>
+                            <td>8:30 - 9:30 PM</td>
+                            <td>ইশা + তারাবি</td>
+                            <td>২০ রাকাত তারাবি</td>
+                        </tr>
+                        <tr>
+                            <td>10:00 - 11:30 PM</td>
+                            <td>মডেল টেস্ট & MCQ Practice</td>
+                            <td>নির্দিষ্ট টার্গেট নিয়ে</td>
+                        </tr>
+                        <tr>
+                            <td>11:30 PM - 3:45 AM</td>
+                            <td>ঘুম</td>
+                            <td>৪+ ঘণ্টা</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Subject-wise Focus -->
+        <section id="subject-focus" class="section">
+            <h2>বিষয়ভিত্তিক প্রস্তুতি</h2>
+            
+            <div class="subject-grid">
+                <div class="subject-card math">
+                    <h3>গণিত/উচ্চতর গণিত</h3>
+                    <ul>
+                        <li>প্রতিদিন ১-২টি সমস্যা সমাধান করা</li>
+                        <li>প্রতিদিন ১টি সূত্র Math Model Test মারা</li>
+                        <li>Integration/Differentiation থেকে বেট প্রশ্ন করা</li>
+                    </ul>
+                </div>
+
+                <div class="subject-card physics">
+                    <h3>পদার্থবিজ্ঞান</h3>
+                    <ul>
+                        <li>Equations মুখস্থ নয়, বোঝার চেষ্টা করা</li>
+                        <li>১০+ বছরের বোর্ড প্রশ্ন প্র্যাকটিস করা</li>
+                        <li>MCQ-এর জন্য প্রতিদিন ৩০ মিনিট সময় রাখা</li>
+                    </ul>
+                </div>
+
+                <div class="subject-card chemistry">
+                    <h3>রসায়ন</h3>
+                    <ul>
+                        <li>Organic + Inorganic প্রতিদিন রিভিশন করা</li>
+                        <li>গুরুত্বপূর্ণ বিষয়গুলোর Flashcards বানিয়ে মুখস্থ করা</li>
+                        <li>চিন্তা করা - কেন রিয়াকশনটা হচ্ছে?</li>
+                    </ul>
+                </div>
+
+                <div class="subject-card biology">
+                    <h3>জীববিজ্ঞান</h3>
+                    <ul>
+                        <li>Diagram অনুশীলন করা (৫-১০ মিনিট/দিন)</li>
+                        <li>গুরুত্বপূর্ণ Processes (Respiration, Digestion)</li>
+                        <li>Flowchart আকারে লিখে ফেলা</li>
+                    </ul>
+                </div>
+
+                <div class="subject-card others">
+                    <h3>অন্যান্য বিষয়</h3>
+                    <ul>
+                        <li>বাংলা: সাহিত্য ও ব্যাকরণ অনুশীলন</li>
+                        <li>English: Grammar & Writing Practice</li>
+                        <li>ICT: প্র্যাক্টিক্যাল অনুশীলন</li>
+                        <li>বাংলাদেশ ও বিশ্বপরিচয়: মানচিত্র ও তথ্য মুখস্থ</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Tips -->
+        <section id="tips" class="section">
+            <h2>গুরুত্বপূর্ণ টিপস</h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <h3>এই ভুলগুলো করবে না:</h3>
+                    <ul>
+                        <li>সারাদিন শুধু MCQ পড়বে না, CQ প্র্যাকটিসও প্রয়োজন</li>
+                        <li>নতুন নোট বানাতে যেও না, আগে করা নোটই রিভিশন করো</li>
+                        <li>ইফতারের পর কোনো বেশি সময় দেবে না</li>
+                        <li>রাত জেগে পড়ার চেয়ে ফজরের পর পড়া অনেক Productive!</li>
+                        <li>নামাজের সময় পড়াশোনা করবে না</li>
+                        <li>প্রতিদিন কমপক্ষে ৪ ঘণ্টা ঘুমাবে</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Routine Modal -->
+        <div id="routineModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>আপনার পড়াশোনার রুটিন তৈরি করুন</h2>
+                <form id="routineForm">
+                    <!-- Basic Info -->
+                    <div class="form-section">
+                        <h3>সাধারণ তথ্য</h3>
+                        <div class="form-group">
+                            <label>আপনি কোন শ্রেণীতে পড়েন?</label>
+                            <select name="studentClass" required>
+                                <option value="ssc">এসএসসি</option>
+                                <option value="hsc">এইচএসসি</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>আপনার বিভাগ?</label>
+                            <select name="section" required>
+                                <option value="science">বিজ্ঞান</option>
+                                <option value="commerce">ব্যবসায় শিক্ষা</option>
+                                <option value="humanities">মানবিক</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Study Preferences -->
+                    <div class="form-section">
+                        <h3>পড়াশোনার প্রাথমিকতা</h3>
+                        <div class="form-group">
+                            <label>আপনার কঠিন বিষয়গুলো কোনটি? (একাধিক নির্বাচন করুন)</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="hardestSubjects" value="math"> গণিত/উচ্চতর গণিত</label>
+                                <label><input type="checkbox" name="hardestSubjects" value="physics"> পদার্থবিজ্ঞান</label>
+                                <label><input type="checkbox" name="hardestSubjects" value="chemistry"> রসায়ন</label>
+                                <label><input type="checkbox" name="hardestSubjects" value="biology"> জীববিজ্ঞান</label>
+                                <label><input type="checkbox" name="hardestSubjects" value="english"> ইংরেজি</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>কোরআন তিলাওয়াতের জন্য কখন সময় নিতে চান?</label>
+                            <select name="quranTime" required>
+                                <option value="fajr">ফজরের পর</option>
+                                <option value="asr">আসরের পর</option>
+                                <option value="maghrib">মাগরিবের পর</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>প্রতিদিন কত মিনিট কোরআন তিলাওয়াত করবেন?</label>
+                            <select name="quranDuration" required>
+                                <option value="15">১৫ মিনিট</option>
+                                <option value="30">৩০ মিনিট</option>
+                                <option value="45">৪৫ মিনিট</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Study Hours -->
+                    <div class="form-section">
+                        <h3>পড়াশোনার সময়</h3>
+                        <div class="form-group">
+                            <label>ফজরের পর কত ঘণ্টা পড়তে চান?</label>
+                            <select name="fajrStudyHours" required>
+                                <option value="1">১ ঘণ্টা</option>
+                                <option value="1.5">১.৫ ঘণ্টা</option>
+                                <option value="2">২ ঘণ্টা</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>দুপুরে কত ঘণ্টা পড়তে চান?</label>
+                            <select name="noonStudyHours" required>
+                                <option value="2">২ ঘণ্টা</option>
+                                <option value="2.5">২.৫ ঘণ্টা</option>
+                                <option value="3">৩ ঘণ্টা</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>আপনার কি MCQ প্র্যাকটিস বেশি দরকার?</label>
+                            <select name="needMCQPractice" required>
+                                <option value="yes">হ্যাঁ</option>
+                                <option value="no">না</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Subject Hours -->
+                    <div class="form-section">
+                        <h3>বিষয়ভিত্তিক সময় বণ্টন (মিনিটে)</h3>
+                        <div class="subject-hours">
+                            <div class="subject-input">
+                                <label>গণিত/উচ্চতর গণিত (মিনিট):</label>
+                                <input type="number" name="mathMinutes" min="30" max="240" value="120" required>
+                            </div>
+                            <div class="subject-input">
+                                <label>পদার্থবিজ্ঞান (মিনিট):</label>
+                                <input type="number" name="physicsMinutes" min="30" max="240" value="120" required>
+                            </div>
+                            <div class="subject-input">
+                                <label>রসায়ন (মিনিট):</label>
+                                <input type="number" name="chemistryMinutes" min="30" max="240" value="120" required>
+                            </div>
+                            <div class="subject-input">
+                                <label>জীববিজ্ঞান (মিনিট):</label>
+                                <input type="number" name="biologyMinutes" min="30" max="240" value="90" required>
+                            </div>
+                            <div class="subject-input">
+                                <label>ইংরেজি (মিনিট):</label>
+                                <input type="number" name="englishMinutes" min="30" max="120" value="60" required>
+                            </div>
+                            <div class="subject-input">
+                                <label>বাংলা (মিনিট):</label>
+                                <input type="number" name="banglaMinutes" min="30" max="120" value="60" required>
+                            </div>
+                            <div class="subject-input">
+                                <label>ICT (মিনিট):</label>
+                                <input type="number" name="ictMinutes" min="30" max="120" value="30" required>
+                            </div>
+                            <p class="help-text">* প্রতিটি বিষয়ের জন্য সময় মিনিটে দিন (সর্বনিম্ন ৩০ মিনিট)</p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Preferences -->
+                    <div class="form-section">
+                        <h3>অতিরিক্ত পছন্দসমূহ</h3>
+                        <div class="form-group">
+                            <label>আসরের পর পড়াশোনা করবেন?</label>
+                            <select name="asrStudy" required>
+                                <option value="yes">হ্যাঁ</option>
+                                <option value="no">না</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>তারাবির পর পড়তে চান?</label>
+                            <select name="nightStudy" required>
+                                <option value="yes">হ্যাঁ</option>
+                                <option value="no">না</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>প্রতিদিন কয়টি মডেল টেস্ট দিতে চান?</label>
+                            <select name="modelTestCount" required>
+                                <option value="1">১টি</option>
+                                <option value="2">২টি</option>
+                                <option value="3">৩টি</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="generate-btn">রুটিন তৈরি করুন</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p> 2025 SSC/HSC Study Planner</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="custom-routine.js"></script>
+</body>
+</html>

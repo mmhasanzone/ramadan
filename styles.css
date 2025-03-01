@@ -1,0 +1,398 @@
+/* Islamic Theme Variables */
+:root {
+    --primary-color: #2C5F2D;
+    --secondary-color: #97BC62;
+    --accent-color: #00A878;
+    --gold: #C3A069;
+    --cream: #FFF8E7;
+    --light-green: #E5F2E5;
+    --dark-text: #234B25;
+    --light-text: #FFF8E7;
+    --border-radius: 15px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    line-height: 1.6;
+    background-color: var(--cream);
+    color: var(--dark-text);
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232C5F2D' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid var(--gold);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.8 8.544l1.414 1.414 9.9-9.9h-2.77zm22.628 0L53.8 8.828l-1.415 1.415L41.456 0h3.515zM15.343 0L6.8 8.544l1.414 1.414 9.9-9.9h-2.77zm16.97 0L25.8 6.485 27.216 7.9l7.9-7.9h-2.83zm-11.313 0L13.8 7.2 15.214 8.613 23.8 0h-2.8zM38 0L26.8 11.2l1.414 1.414L40 0h-2zM31.657 0l-8.543 8.544 1.414 1.414 9.9-9.9h-2.77zm-5.657 0L18.8 7.2 20.214 8.613 28.8 0h-2.8zm11.313 0L30.8 6.485 32.216 7.9l7.9-7.9h-2.83zM22 0L12.8 9.2l1.414 1.414L26 0h-4zm7.657 0l-8.543 8.544 1.414 1.414 9.9-9.9h-2.77zM32 0L20.8 11.2l1.414 1.414L34 0h-2zm7.657 0l-8.543 8.544 1.414 1.414 9.9-9.9h-2.77z' fill='%23FFF8E7' fill-opacity='0.1'/%3E%3C/svg%3E");
+    opacity: 0.1;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.subtitle {
+    color: var(--light-text);
+    font-size: 1.3rem;
+    opacity: 0.9;
+    position: relative;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Section Styles */
+.section {
+    background: #fff;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(195, 160, 105, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--gold);
+    position: relative;
+}
+
+/* Prayer Times Section */
+.prayer-times-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.prayer-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.prayer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--accent-color);
+}
+
+.prayer-card::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%232C5F2D' fill-opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.5;
+}
+
+.prayer-card:hover {
+    transform: translateY(-5px);
+}
+
+.prayer-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.prayer-card .time {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 1rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.prayer-card .note {
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+}
+
+/* Schedule Table */
+.schedule-table {
+    overflow-x: auto;
+    margin-top: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+th {
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 1.2rem;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+td {
+    padding: 1.2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+tr:hover {
+    background: var(--light-green);
+}
+
+/* Create Routine Button */
+.create-routine-btn {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.create-routine-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.create-routine-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.create-routine-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-color);
+    color: var(--light-text);
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.8 8.544l1.414 1.414 9.9-9.9h-2.77zm22.628 0L53.8 8.828l-1.415 1.415L41.456 0h3.515zM15.343 0L6.8 8.544l1.414 1.414 9.9-9.9h-2.77zm16.97 0L25.8 6.485 27.216 7.9l7.9-7.9h-2.83zm-11.313 0L13.8 7.2 15.214 8.613 23.8 0h-2.8zM38 0L26.8 11.2l1.414 1.414L40 0h-2zM31.657 0l-8.543 8.544 1.414 1.414 9.9-9.9h-2.77zm-5.657 0L18.8 7.2 20.214 8.613 28.8 0h-2.8zm11.313 0L30.8 6.485 32.216 7.9l7.9-7.9h-2.83zM22 0L12.8 9.2l1.414 1.414L26 0h-4zm7.657 0l-8.543 8.544 1.414 1.414 9.9-9.9h-2.77zM32 0L20.8 11.2l1.414 1.414L34 0h-2zm7.657 0l-8.543 8.544 1.414 1.414 9.9-9.9h-2.77z' fill='%23FFF8E7' fill-opacity='0.1'/%3E%3C/svg%3E");
+    opacity: 0.1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+    }
+
+    .prayer-times-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .prayer-card {
+        padding: 1.5rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    td, th {
+        padding: 0.8rem;
+    }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form styles */
+.form-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group select,
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin: 5px 0;
+}
+
+.subject-hours {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.generate-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.generate-btn:hover {
+    background-color: #45a049;
+}
