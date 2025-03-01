@@ -10,6 +10,9 @@
     --light-text: #FFF8E7;
     --border-radius: 15px;
     --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --dark-mode-bg: #1a1a1a;
+    --dark-mode-text: #ffffff;
+    --dark-mode-surface: #2d2d2d;
 }
 
 /* Base Styles */
@@ -101,6 +104,18 @@ main {
     position: relative;
 }
 
+.section h2::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 15px;
+    color: var(--accent-color);
+}
+
+#prayer-times h2::before { content: "\f51c"; /* mosque */ }
+#daily-schedule h2::before { content: "\f783"; /* calendar */ }
+#subject-focus h2::before { content: "\f02d"; /* book */ }
+#tips h2::before { content: "\f0eb"; /* lightbulb */ }
+
 /* Prayer Times Section */
 .prayer-times-container {
     display: grid;
@@ -147,11 +162,58 @@ main {
 }
 
 .prayer-card h3 {
+    font-size: 1.8rem;
     color: var(--primary-color);
-    font-size: 1.5rem;
     margin-bottom: 1rem;
-    position: relative;
-    z-index: 1;
+}
+
+.prayer-card .time {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 0.8rem 0;
+    cursor: pointer;
+}
+
+.prayer-card .note {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    opacity: 0.9;
+}
+
+/* Remove prayer card icons */
+.prayer-card h3::before {
+    display: none;
+}
+
+/* Add edit indicator */
+.prayer-card .time:hover::after {
+    content: '\f304'; /* pen icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1rem;
+    margin-left: 8px;
+    color: var(--accent-color);
+}
+
+.fajr h3::before { content: "\f2f2"; /* clock */ }
+.dhuhr h3::before { content: "\f185"; /* sun */ }
+.asr h3::before { content: "\f788"; /* cloud-sun */ }
+.maghrib h3::before { content: "\f10c"; /* moon */ }
+.isha h3::before { content: "\f51c"; /* mosque */ }
+
+@media (max-width: 768px) {
+    .prayer-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .prayer-card .time {
+        font-size: 1.6rem;
+    }
+    
+    .prayer-card .note {
+        font-size: 1rem;
+    }
 }
 
 .prayer-card .time {
@@ -218,12 +280,21 @@ tr:hover {
     width: 100%;
     max-width: 400px;
     margin: 2rem auto;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: var(--box-shadow);
     position: relative;
     overflow: hidden;
+}
+
+.create-routine-btn::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f783"; /* calendar-plus */
 }
 
 .create-routine-btn::before {
@@ -303,6 +374,35 @@ footer::before {
     td, th {
         padding: 0.8rem;
     }
+
+    .prayer-times-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .prayer-card {
+        margin: 0.5rem 0;
+        padding: 1.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 2% auto;
+        padding: 15px;
+    }
+
+    /* Better Touch Targets */
+    button, 
+    select, 
+    input[type="checkbox"] {
+        min-height: 44px;
+        font-size: 16px;
+    }
+
+    .checkbox-group label {
+        padding: 10px 0;
+    }
 }
 
 /* Modal styles */
@@ -327,6 +427,12 @@ footer::before {
     border-radius: 8px;
     max-height: 80vh;
     overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .close {
@@ -391,8 +497,158 @@ footer::before {
     width: 100%;
     font-size: 16px;
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .generate-btn:hover {
     background-color: #45a049;
 }
+
+.generate-btn::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f055"; /* plus-circle */
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-mode-bg);
+        color: var(--dark-mode-text);
+    }
+
+    .section {
+        background: var(--dark-mode-surface);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .prayer-card {
+        background: var(--dark-mode-surface);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .prayer-card h3,
+    .prayer-card .time {
+        color: var(--dark-mode-text);
+    }
+
+    .modal-content {
+        background-color: var(--dark-mode-surface);
+        color: var(--dark-mode-text);
+    }
+
+    table {
+        background: var(--dark-mode-surface);
+    }
+
+    td {
+        color: var(--dark-mode-text);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Add Loading Animation */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+}
+
+/* Better Form Styling */
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 168, 120, 0.2);
+}
+
+/* Subject Card Icons */
+.subject-card h3::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.math h3::before { content: "\f698"; /* square-root-alt */ }
+.physics h3::before { content: "\f72e"; /* atom */ }
+.chemistry h3::before { content: "\f0c3"; /* flask */ }
+.biology h3::before { content: "\f470"; /* dna */ }
+.others h3::before { content: "\f5da"; /* book-reader */ }
+
+/* Button Icons */
+.edit-btn::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f044"; /* edit */
+    margin-right: 8px;
+}
+
+.save-btn::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f0c7"; /* save */
+    margin-right: 8px;
+}
+
+.reset-btn::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f2f1"; /* undo */
+    margin-right: 8px;
+}
+
+/* Form Icons */
+.form-section h3::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.form-section:nth-child(1) h3::before { content: "\f007"; /* user */ }
+.form-section:nth-child(2) h3::before { content: "\f02d"; /* book */ }
+.form-section:nth-child(3) h3::before { content: "\f017"; /* clock */ }
+.form-section:nth-child(4) h3::before { content: "\f51c"; /* mosque */ }
+.form-section:nth-child(5) h3::before { content: "\f085"; /* cogs */ }
